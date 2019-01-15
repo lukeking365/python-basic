@@ -6,6 +6,8 @@ def getFiristName(name):
             print("姓："+ name[0:n] +" 名："+ name[n:(lenName+1)])
             break
         n -= 1
+        if n == 0:
+            print('对不起，没有找到匹配信息！')
 #test
 if __name__ == "__main__":
     getFiristName("高晓婷")
