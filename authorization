@@ -1,0 +1,24 @@
+#通过2进制数字方法对用户权限进行判断
+authorization_list = ["未注册用户", "超级管理员","区域管理员","业务员","区域行政管理","行政管理","医生","护士","患者","供应商"]
+def authorization(authory):
+    authory_list=[]
+    auth_slice = str(bin(authory)[2:])
+    n = len(auth_slice)
+    while n >= 0:
+        if auth_slice[n-1]== '1':
+            authory_list.append(authorization_list[n-1])
+        n = n - 1
+    if len(authory_list) == 0:
+        print("你拥有的权限是：未注册用户")
+    else:
+        print("你拥有的权限是：" + ';'.join(authory_list))
+
+
+if __name__ == "__main__":
+    aunumber = int(input("请输入一个小于256的数字："))
+    if aunumber >= 0 and aunumber < 256:
+        authorization(aunumber)
+    elif aunumber=="":
+            print("不能输入空格！")
+    else:
+        print("输入无效，请重新输入！")    
