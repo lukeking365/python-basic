@@ -18,7 +18,7 @@ if __name__ == "__main__":
     aunumber = int(input("请输入一个小于256的数字："))
     if aunumber >= 0 and aunumber < 256:
         authorization(aunumber)
-    elif aunumber=="":
-            print("不能输入空格！")
+    elif len(aunumber)== 0 :
+        print("输入不能为空！")
     else:
         print("输入无效，请重新输入！")    
